@@ -1,6 +1,6 @@
-# babel-plugin-transform-es2015-modules-simple-destructure-amd
+# babel-plugin-transform-modules-simple-amd
 
-Limited transformer for ECMAScript 2015 modules (AMD)
+Limited transformer from ESM to AMD, for Babel 7.x.
 
 Converts this code:
 ```js
@@ -20,7 +20,7 @@ define(['/path/to/x', '/path/to/y', 'react'], function (x, y, React) {
 });
 ```
 
-Instead of this one (generated with ``babel-plugin-transform-es2015-modules-amd``):
+Instead of this one (generated with `@babel/plugin-transform-modules-amd`):
 ```js
 define(['exports', '/path/to/x', '/path/to/y', 'react'], function (exports, _x, _y, _react) {
   Object.defineProperty(exports, "__esModule", {
@@ -60,7 +60,7 @@ Other features aren't supported.
 ## Installation
 
 ```sh
-$ npm install --save-dev babel-plugin-transform-es2015-modules-simple-destructure-amd
+npm install --save-dev babel-plugin-transform-modules-simple-amd
 ```
 
 ## Usage
@@ -71,16 +71,15 @@ $ npm install --save-dev babel-plugin-transform-es2015-modules-simple-destructur
 
 ```json
 {
-  "plugins": ["transform-es2015-modules-simple-destructure-amd"]
+  "plugins": [
+    "transform-modules-simple-amd"
+  ],
+  "presets": [
+    ["@babel/preset-env", {
+      "modules": false
+    }]
+  ]
 }
 ```
 
-### Via Node API
-
-```javascript
-require('babel').transform('code', {
-  plugins: ['transform-es2015-modules-simple-destructure-amd']
-});
-```
-
-Thanks to [finom](https://github.com/finom/babel-plugin-transform-es2015-modules-simple-amd).
+Thanks to [th3dark0n3](https://github.com/th3dark0n3/babel-plugin-transform-es2015-modules-simple-destructure-amd)
