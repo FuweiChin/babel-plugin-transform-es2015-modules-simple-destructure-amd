@@ -2,6 +2,8 @@
 
 Limited transformer from ESM to AMD, for Babel 7.x.
 
+[![npm](https://img.shields.io/npm/v/babel-plugin-transform-modules-simple-amd.svg)](https://www.npmjs.org/package/babel-plugin-transform-modules-simple-amd)
+
 Converts this code:
 ```js
 import x from '/path/to/x';
